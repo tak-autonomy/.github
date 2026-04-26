@@ -47,10 +47,9 @@ Autonomous Vehicles
 |  ASV/USV/AUV   |  UGV          |  UAV/UAS     |
 +--------+--------+------+--------+------+-------+
          |               |               |
-    [MOOS-IvP]        [ROS 2]          [PX4]
-    (active)          (planned)        (planned)
-         |               |               |
          +---------------+---------------+
+                         |
+                    [MOOS-IvP]
                          |
                   [tak-autonomy]
                          |
