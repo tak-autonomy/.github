@@ -40,21 +40,24 @@ frameworks over time.
 
 ## Architecture
 
+```
 Autonomous Vehicles
-┌─────────────────────────────────────┐
-│  Maritime    │  Ground   │  Air      │
-│  ASV / USV   │  UGV      │  UAV      │
-└──────┬───────┴─────┬─────┴────┬──────┘
-│             │          │
-[ MOOS-IvP ]  [ ROS 2 ]   [ PX4 ]     ← Autonomy frameworks
-│             │          │         (current focus: MOOS-IvP)
-└─────────────┴──────────┘
-│
-[ tak-autonomy ]           ← Tools from this org
-│
-[ TAK Server ]
-/         
-[ATAK]       [WebTAK]         ← Operator clients
++-----------------------------------------------+
+|  Maritime       |  Ground       |  Air         |
+|  ASV/USV/AUV   |  UGV          |  UAV/UAS     |
++--------+--------+------+--------+------+-------+
+         |               |               |
+    [MOOS-IvP]        [ROS 2]          [PX4]
+    (active)          (planned)        (planned)
+         |               |               |
+         +---------------+---------------+
+                         |
+                  [tak-autonomy]
+                         |
+                   [TAK Server]
+                    /         \
+               [ATAK]       [WebTAK]
+```
 
 **Outbound (Vehicle → TAK):** Vehicle position, heading, speed, and 
 state published to the TAK common operating picture via TCP streaming 
@@ -108,9 +111,6 @@ target autonomy framework.
 - [ ] Multi-robot management overlay for commanding and monitoring 
       robot teams from ATAK
 
-### Future Framework Support
-- [ ] ROS 2 bridge for ground and air vehicle integration
-- [ ] PX4/MAVLink integration for UAV support
 
 ---
 
